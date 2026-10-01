@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store - THE CLEEDS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar Placeholder -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <a href="products.html" class="hero-btn btn" aria-label="Shop Now">Shop Now <span class="arrow">→</span></a>
+    </section>
+    <!-- Main Content -->
+    <main class="container">
+        <section class="features">
+            <div class="feature-card">
+                <h3>Premium Quality</h3>
+                <p>Carefully selected seeds that meet strict freshness and quality standards.</p>
+            </div>
+            <div class="feature-card">
+                <h3>100% Natural</h3>
+                <p>No added preservatives or chemicals, just pure, wholesome ingredients.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Fast Delivery</h3>
+                <p>Quick, reliable shipping so you can enjoy your healthy snacks sooner.</p>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <h2 class="featured-products-title">Featured Products</h2>
+            <div class="products-grid">
+                <!-- Product 1: Chia Seeds -->
+                <div class="product-card">
+                    <a href="chia-seeds-detail.html" style="text-decoration: none; color: inherit;">
+                        <div class="product-image">
+                            <img src="../images/Chia/front.png" alt="Chia Seeds">
+                        </div>
+                        <h3>Chia Seeds</h3>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                        </div>
+                        <p class="product-price">₹130.00</p>
+                    </a>
+                    <a href="chia-seeds-detail.html" class="btn view-product-btn">
+                        View Product
+                    </a>
+                </div>
+
+                <!-- Product 2: Flax Seeds -->
+                <div class="product-card">
+                    <a href="flax-seeds-detail.html" style="text-decoration: none; color: inherit;">
+                        <div class="product-image">
+                            <img src="../images/Flax/front.png" alt="Flax Seeds">
+                        </div>
+                        <h3>Flax Seeds</h3>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                        </div>
+                        <p class="product-price">₹100.00</p>
+                    </a>
+                    <a href="flax-seeds-detail.html" class="btn view-product-btn">
+                        View Product
+                    </a>
+                </div>
+
+                <!-- Product 3: Sunflower Seeds -->
+                <div class="product-card">
+                    <a href="sunflower-seeds-detail.html" style="text-decoration: none; color: inherit;">
+                        <div class="product-image">
+                            <img src="../images/Sunflower/front.png" alt="Sunflower Seeds">
+                        </div>
+                        <h3>Sunflower Seeds</h3>
+                        <div class="product-rating">
+                            <span class="rating-stars">★★★★★</span>
+                        </div>
+                        <p class="product-price">₹130.00</p>
+                    </a>
+                    <a href="sunflower-seeds-detail.html" class="btn view-product-btn">
+                        View Product
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews Section -->
+        <section class="customer-reviews-section">
+            <h2 class="reviews-section-title">What Our Customers Say</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow left" id="reviews-prev-btn" aria-label="Previous reviews">◀</button>
+                <div class="carousel-container">
+                    <div id="homepage-reviews-grid" class="carousel-track">
+                        <!-- Reviews will be loaded here dynamically by script.js -->
+                    </div>
+                </div>
+                <button class="carousel-arrow right" id="reviews-next-btn" aria-label="Next reviews">▶</button>
+            </div>
+            <div class="reviews-action">
+                <button id="leave-review-btn" class="btn">Leave a Review</button>
+            </div>
+        </section>
+
+        <!-- Why Choose The Cleeds Section -->
+        <section class="why-choose-us">
+            <h2 class="why-choose-us-title">Why Choose The Cleeds?</h2>
+            <div class="why-choose-us-grid">
+                <!-- Card 1: 100% Natural -->
+                <div class="why-card">
+                    <div class="why-icon">🌱</div>
+                    <h3>100% Natural</h3>
+                    <p>Carefully selected natural seeds.</p>
+                </div>
+                <!-- Card 2: Rich in Nutrition -->
+                <div class="why-card">
+                    <div class="why-icon">💪</div>
+                    <h3>Rich in Nutrition</h3>
+                    <p>Packed with essential nutrients.</p>
+                </div>
+                <!-- Card 3: Fast Delivery -->
+                <div class="why-card">
+                    <div class="why-icon">🚚</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable shipping.</p>
+                </div>
+                <!-- Card 4: Secure Shopping -->
+                <div class="why-card">
+                    <div class="why-icon">🔒</div>
+                    <h3>Secure Shopping</h3>
+                    <p>Safe and trusted ordering experience.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Review Modal -->
+    <div id="review-modal" class="review-modal">
+        <div class="review-modal-content">
+            <span class="close-modal-btn" id="close-review-modal">&times;</span>
+            <h3>Leave a Review</h3>
+            <form id="homepage-review-form">
+                <div class="form-group">
+                    <label for="review-name">Name</label>
+                    <input type="text" id="review-name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-role">Role/Title (e.g. Fitness Enthusiast)</label>
+                    <input type="text" id="review-role" placeholder="Enter your role or title (e.g. Health Coach)" required>
+                </div>
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating-input" id="star-rating-input">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <input type="hidden" id="review-rating" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-message">Review Message</label>
+                    <textarea id="review-message" rows="4" placeholder="Write your review here..." required></textarea>
+                </div>
+                <div id="review-form-error" class="error-message" style="display: none; color: #b42318; font-weight: 600; margin-bottom: 1rem; text-align: left;"></div>
+                <div id="review-form-success" class="success-message" style="display: none; color: #27ae60; font-weight: 600; margin-bottom: 1rem; text-align: center;"></div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 THE CLEEDS. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
