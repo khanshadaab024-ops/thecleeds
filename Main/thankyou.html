@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Order | THE CLEEDS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="track-order-page">
+    <div id="navbar-container"></div>
+
+    <main class="container">
+        <section class="track-order-card" aria-labelledby="track-order-title">
+            <div class="track-order-icon" aria-hidden="true">
+                <i class="fas fa-truck-moving"></i>
+            </div>
+            <h1 id="track-order-title" class="track-order-title">Track Your Order</h1>
+            <form id="track-order-form" class="track-order-form" novalidate>
+                <input
+                    type="text"
+                    id="order-id-input"
+                    class="track-order-input"
+                    placeholder="Enter your Order ID"
+                    aria-label="Order ID"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="btn track-order-button">Track Order</button>
+                <p id="track-order-error" class="track-order-error" role="alert" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 THE CLEEDS. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

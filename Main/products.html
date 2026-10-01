@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - THE CLEEDS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar Placeholder -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2>Our Premium Collection</h2>
+        
+        <!-- Products Container -->
+        <div class="products-grid">
+            <!-- Product 1: Chia Seeds -->
+            <div class="product-card">
+                <a href="chia-seeds-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-image">
+                        <img src="../images/Chia/front.png" alt="Chia Seeds">
+                    </div>
+                    <h3>Chia Seeds</h3>
+                    <p class="product-description">Premium superfood rich in Omega-3</p>
+                    <p class="product-price">₹130.00</p>
+                </a>
+                
+                <!-- Variant Selector -->
+                <div class="variant-selector">
+                    <label for="variant1">Size:</label>
+                    <select id="variant1" class="size-dropdown">
+                        <option value="200g">200g - ₹130.00</option>
+                        <option value="400g">400g - ₹260.00</option>
+                        <option value="500g">500g - ₹320.00</option>
+                    </select>
+                </div>
+                
+                <!-- Add to Cart Button -->
+                <button class="btn add-to-cart" onclick="addToCart('Chia Seeds', this)" style="width: 100%;">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Product 2: Flax Seeds -->
+            <div class="product-card">
+                <a href="flax-seeds-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-image">
+                        <img src="../images/Flax/front.png" alt="Flax Seeds">
+                    </div>
+                    <h3>Flax Seeds</h3>
+                    <p class="product-description">Nutrient-dense seeds packed with lignans</p>
+                    <p class="product-price">₹100.00</p>
+                </a>
+                
+                <!-- Variant Selector -->
+                <div class="variant-selector">
+                    <label for="variant2">Size:</label>
+                    <select id="variant2" class="size-dropdown">
+                        <option value="200g">200g - ₹100.00</option>
+                        <option value="400g">400g - ₹200.00</option>
+                        <option value="500g">500g - ₹250.00</option>
+                    </select>
+                </div>
+                
+                <!-- Add to Cart Button -->
+                <button class="btn add-to-cart" onclick="addToCart('Flax Seeds', this)" style="width: 100%;">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Product 3: Mix Seeds -->
+            <div class="product-card">
+                <a href="mix-seeds-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-image">
+                        <img src="../images/Mix/front.png" alt="Mix Seeds">
+                    </div>
+                    <h3>Mix Seeds</h3>
+                    <p class="product-description">Delicious blend of assorted healthy seeds</p>
+                    <p class="product-price">₹110.00</p>
+                </a>
+                
+                <!-- Variant Selector -->
+                <div class="variant-selector">
+                    <label for="variant3">Size:</label>
+                    <select id="variant3" class="size-dropdown">
+                        <option value="200g">200 g - ₹110.00</option>
+                        <option value="400g">400 g - ₹220.00</option>
+                        <option value="500g">500 g - ₹275.00</option>
+                    </select>
+                </div>
+                
+                <!-- Add to Cart Button -->
+                <button class="btn add-to-cart" onclick="addToCart('Mix Seeds', this)" style="width: 100%;">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Product 4: Pumpkin Seeds -->
+            <div class="product-card">
+                <a href="pumpkin-seeds-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-image">
+                        <img src="../images/Pumpkin/front.png" alt="Pumpkin Seeds">
+                    </div>
+                    <h3>Pumpkin Seeds</h3>
+                    <p class="product-description">Crunchy seeds full of minerals</p>
+                    <p class="product-price">₹120.00</p>
+                </a>
+                
+                <!-- Variant Selector -->
+                <div class="variant-selector">
+                    <label for="variant4">Size:</label>
+                    <select id="variant4" class="size-dropdown">
+                        <option value="200g">200 g - ₹120.00</option>
+                        <option value="400g">400 g - ₹240.00</option>
+                        <option value="500g">500 g - ₹300.00</option>
+                    </select>
+                </div>
+                
+                <!-- Add to Cart Button -->
+                <button class="btn add-to-cart" onclick="addToCart('Pumpkin Seeds', this)" style="width: 100%;">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Product 5: Sunflower Seeds -->
+            <div class="product-card">
+                <a href="sunflower-seeds-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-image">
+                        <img src="../images/Sunflower/front.png" alt="Sunflower Seeds">
+                    </div>
+                    <h3>Sunflower Seeds</h3>
+                    <p class="product-description">Rich in Vitamin E and healthy fats</p>
+                    <p class="product-price">₹130.00</p>
+                </a>
+                
+                <!-- Variant Selector -->
+                <div class="variant-selector">
+                    <label for="variant5">Size:</label>
+                    <select id="variant5" class="size-dropdown">
+                        <option value="200g">200 g - ₹130.00</option>
+                        <option value="400g">400 g - ₹260.00</option>
+                        <option value="500g">500 g - ₹325.00</option>
+                    </select>
+                </div>
+                
+                <!-- Add to Cart Button -->
+                <button class="btn add-to-cart" onclick="addToCart('Sunflower Seeds', this)" style="width: 100%;">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Product 6: Watermelon Seeds -->
+            <div class="product-card">
+                <a href="watermelon-seeds-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-image">
+                        <img src="../images/Watermelon/front.png" alt="Watermelon Seeds">
+                    </div>
+                    <h3>Watermelon Seeds</h3>
+                    <p class="product-description">Nutritious seeds loaded with magnesium</p>
+                    <p class="product-price">₹150.00</p>
+                </a>
+                
+                <!-- Variant Selector -->
+                <div class="variant-selector">
+                    <label for="variant6">Size:</label>
+                    <select id="variant6" class="size-dropdown">
+                        <option value="200g">200 g - ₹150.00</option>
+                        <option value="400g">400 g - ₹300.00</option>
+                        <option value="500g">500 g - ₹375.00</option>
+                    </select>
+                </div>
+                
+                <!-- Add to Cart Button -->
+                <button class="btn add-to-cart" onclick="addToCart('Watermelon Seeds', this)" style="width: 100%;">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 THE CLEEDS. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

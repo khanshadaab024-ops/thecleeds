@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking Details | THE CLEEDS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="track-order-details-page">
+    <div id="navbar-container"></div>
+
+    <main class="container" data-track-order-details>
+        <section class="track-order-card" aria-labelledby="tracking-details-title">
+            <h1 id="tracking-details-title" class="track-order-title">Order Tracking Details</h1>
+
+            <div class="tracking-summary">
+                <div class="tracking-summary-row">
+                    <span class="tracking-summary-label">Order ID</span>
+                    <span id="tracking-order-id" class="tracking-summary-value"></span>
+                </div>
+                <div class="tracking-summary-row">
+                    <span class="tracking-summary-label">Estimated Delivery Date</span>
+                    <span id="tracking-estimated-delivery" class="tracking-summary-value"></span>
+                </div>
+            </div>
+
+            <ul id="tracking-timeline" class="tracking-timeline" aria-label="Tracking timeline"></ul>
+            <div id="tracking-empty-state" class="empty-state-card error-state" style="display: none;">
+                <div class="empty-state-icon">📍</div>
+                <h3>Order Not Found</h3>
+                <p>We could not find your order.<br>Please check your Order ID and try again.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 THE CLEEDS. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cleeds Premium Flax Seeds 200g | 100% Natural Superfood</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-page-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .main-product-image {
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .main-product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: zoom-in;
+        }
+        .thumbnail-gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .thumbnail-gallery img {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            object-fit: cover;
+            transition: all 0.3s;
+            cursor: zoom-in;
+        }
+        .thumbnail-gallery img:hover,
+        .thumbnail-gallery img.active {
+            border-color: #007bff;
+        }
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1.3;
+            color: #333;
+        }
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        .rating-stars {
+            color: #ff9900;
+            font-size: 16px;
+        }
+        .price-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .current-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #b12704;
+        }
+        .original-price {
+            font-size: 18px;
+            color: #666;
+            text-decoration: line-through;
+        }
+        .price-per-unit {
+            font-size: 14px;
+            color: #666;
+        }
+        .size-options {
+            margin-top: 20px;
+        }
+        .size-options h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .size-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .size-btn {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        .size-btn:hover {
+            border-color: #007bff;
+        }
+        .size-btn.active {
+            border-color: #007bff;
+            background-color: #e7f3ff;
+        }
+        .size-btn-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .size-btn-price {
+            display: block;
+            font-size: 14px;
+            color: #b12704;
+        }
+        .add-to-cart-btn {
+            background-color: #ff9900;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #f59e0b;
+        }
+        .product-description {
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        .product-description h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .product-description p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .product-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .meta-pill {
+            background: #f4efe8;
+            color: #8B4513;
+            border: 1px solid #e1d3c3;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .product-accordion {
+            margin-top: 20px;
+            border-top: 1px solid #e5e5e5;
+        }
+        .product-accordion details {
+            border-bottom: 1px solid #e5e5e5;
+            padding: 14px 0;
+        }
+        .product-accordion summary {
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+            list-style: none;
+        }
+        .product-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+        .product-accordion summary::after {
+            content: "▾";
+            float: right;
+            color: #374151;
+        }
+        .product-accordion details[open] summary::after {
+            content: "▴";
+        }
+        .highlights-table,
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        .highlights-table td,
+        .details-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        .highlights-table td:first-child,
+        .details-table td:first-child {
+            width: 42%;
+            color: #374151;
+            font-weight: 600;
+        }
+        .important-info {
+            margin-top: 18px;
+            padding-top: 6px;
+        }
+        .important-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+        .important-info h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+            margin: 12px 0 4px;
+        }
+        .important-info p,
+        .important-info ul {
+            color: #111827;
+            line-height: 1.5;
+            margin: 0 0 16px;
+        }
+        .important-info ul {
+            padding-left: 20px;
+        }
+        .product-description-section {
+            margin-top: 22px;
+            width: 100%;
+        }
+        .product-description-heading {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin: 8px 0 14px;
+            text-align: left;
+        }
+        .product-description-images {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            align-items: center;
+        }
+        .product-description-images img {
+            width: min(100%, 920px);
+            height: auto;
+            border-radius: 6px;
+            display: block;
+        }
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        .benefits-list li {
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+        .benefits-list li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .image-modal.show {
+            display: flex;
+        }
+        .image-modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+        .image-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        @media (max-width: 768px) {
+            .product-page-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .size-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar Placeholder -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <a href="products.html" class="back-link">← Back to Products</a>
+
+        <div class="product-page-layout">
+            <!-- Left: Product Gallery -->
+            <div class="product-gallery">
+                <div class="main-product-image">
+                    <img id="mainImage" src="../images/Flax/front.png" alt="The Cleeds Premium Flax Seeds" onclick="openImageModal(this.src)">
+                </div>
+                <div class="thumbnail-gallery">
+                    <img class="thumbnail-img active" src="../images/Flax/front.png" alt="Front" onclick="changeImage(this)">
+                    <img class="thumbnail-img" src="../images/Flax/image 1.jpg" alt="Image 1" onclick="changeImage(this)">
+                    <img class="thumbnail-img" src="../images/Flax/image 2.jpg" alt="Image 2" onclick="changeImage(this)">
+                    <img class="thumbnail-img" src="../images/Flax/image 3.png" alt="Image 3" onclick="changeImage(this)">
+                    <img class="thumbnail-img" src="../images/Flax/image 4.png" alt="Image 4" onclick="changeImage(this)">
+                    <img class="thumbnail-img" src="../images/Flax/image 5.png" alt="Image 5" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div class="product-info">
+                <h1 class="product-title">The Cleeds Premium Flax Seeds | Rich in Omega-3, Fibre & Protein | Healthy Superfood for Daily Nutrition | 100% Natural & Clean Seeds</h1>
+                
+                <div class="product-rating">
+                    <span class="rating-stars">★★★★★</span>
+                    <span>Vegetarian Product</span>
+                </div>
+
+                <div class="price-section">
+                    <div class="price-container">
+                        <span class="current-price" id="displayPrice">₹100.00</span>
+                        <span class="original-price">₹199.00</span>
+                    </div>
+                    <div class="price-per-unit" id="pricePerUnit">₹50.00 /100 g</div>
+                </div>
+
+                <div class="size-options">
+                    <h3>Select Pack:</h3>
+                    <div class="size-buttons">
+                        <button class="size-btn active" onclick="selectSize(this, '200g', '₹100.00', '₹199.00', '₹50.00 /100 g')">
+                            <span class="size-btn-label">200g</span>
+                            <span class="size-btn-price">₹100.00</span>
+                        </button>
+                        <button class="size-btn" onclick="selectSize(this, '400g', '₹200.00', '₹500.00', '₹50.00 /100 g')">
+                            <span class="size-btn-label">400g</span>
+                            <span class="size-btn-price">₹200.00</span>
+                        </button>
+                        <button class="size-btn" onclick="selectSize(this, '500g', '₹250.00', '₹599.00', '₹50.00 /100 g')">
+                            <span class="size-btn-label">500g</span>
+                            <span class="size-btn-price">₹250.00</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-meta">
+                    <span class="meta-pill">Brand: The Cleeds</span>
+                    <span class="meta-pill">Flavor: Natural</span>
+                    <span class="meta-pill">Item Form: Seeds</span>
+                    <span class="meta-pill">Diet Type: Vegetarian</span>
+                </div>
+
+                <button class="add-to-cart-btn" onclick="addToCart()">🛒 Add to Cart</button>
+                <button class="buy-now-btn" onclick="handleBuyNow()">Buy Now</button>
+
+                <div class="product-accordion">
+                    <details open>
+                        <summary>Top highlights</summary>
+                        <table class="highlights-table">
+                            <tr><td>Flavor</td><td>Natural</td></tr>
+                            <tr><td>Brand</td><td>The Cleeds</td></tr>
+                            <tr><td>Item Weight</td><td>200g</td></tr>
+                            <tr><td>Item Form</td><td>Seeds</td></tr>
+                            <tr><td>Speciality</td><td>Rich in Omega-3, High Fibre & Protein, 100% Natural</td></tr>
+                            <tr><td>Diet Type</td><td>Vegetarian</td></tr>
+                        </table>
+                    </details>
+
+                    <details>
+                        <summary>Item details</summary>
+                        <table class="details-table">
+                            <tr><td>Brand Name</td><td>The Cleeds</td></tr>
+                            <tr><td>Product Name</td><td>Premium Flax Seeds</td></tr>
+                            <tr><td>Flavor</td><td>Natural</td></tr>
+                            <tr><td>Item Form</td><td>Raw Seeds</td></tr>
+                            <tr><td>Diet Type</td><td>Vegetarian</td></tr>
+                            <tr><td>Speciality</td><td>Rich in Omega-3, High Fibre & Protein, 100% Natural</td></tr>
+                            <tr><td>Allergen Information</td><td>Packed in a facility that may handle nuts</td></tr>
+                            <tr><td>Net Quantity</td><td>200g</td></tr>
+                            <tr><td>Country of Origin</td><td>India</td></tr>
+                            <tr><td>Packaging Type</td><td>Resealable Pouch</td></tr>
+                            <tr><td>About This Item</td><td>Premium quality flax seeds, rich in omega-3, fibre, protein, and antioxidants. Supports heart and digestive health, ideal for healthy daily nutrition, versatile for direct snacking or adding to meals, and hygienically packed with no additives.</td></tr>
+                            <tr><td>Product Description</td><td>Fuel your body with clean, nutrient-rich superfoods. Flax seeds are rich in omega-3 fatty acids, dietary fibre, protein, and antioxidants, helping support heart health, digestion, and overall wellness.</td></tr>
+                            <tr><td>Storage Instructions</td><td>Store in a cool, dry place away from direct sunlight. Keep sealed after use.</td></tr>
+                        </table>
+                    </details>
+
+                    <details>
+                        <summary>Features & Specs</summary>
+                        <table class="details-table">
+                            <tr><td>Flavor</td><td>Natural</td></tr>
+                            <tr><td>Item Form</td><td>Seeds</td></tr>
+                            <tr><td>Diet Type</td><td>Vegetarian</td></tr>
+                            <tr><td>Specialty</td><td>Rich in Omega-3, High Fibre & Protein, 100% Natural</td></tr>
+                            <tr><td>Seed Type</td><td>Flax Seeds (Alsi)</td></tr>
+                            <tr><td>Processing Method</td><td>Dried</td></tr>
+                        </table>
+                    </details>
+                </div>
+
+                <div class="important-info">
+                    <h3>Important information</h3>
+                    <h4>Ingredients:</h4>
+                    <p>100% Flax Seeds (Alsi Seeds)</p>
+                    <h4>How to Use:</h4>
+                    <ul>
+                        <li>Consume directly as a snack</li>
+                        <li>Sprinkle over oats, yogurt, or salads</li>
+                        <li>Add to smoothies or baked foods</li>
+                        <li>Can be ground into powder for better absorption</li>
+                    </ul>
+                    <h4>Legal Disclaimer:</h4>
+                    <p>Actual product packaging and materials may contain more information than what is shown here. Always read labels and directions before use.</p>
+                </div>
+            </div>
+        </div>
+        <section class="product-description-section">
+            <h4 class="product-description-heading"><strong>Product Description</strong></h4>
+            <div class="product-description-images">
+                <img src="../images/Flax/image 6.png" alt="Flax product description image 6">
+                <img src="../images/Flax/image 7.png" alt="Flax product description image 7">
+                <img src="../images/Flax/image 8.png" alt="Flax product description image 8">
+                <img src="../images/Flax/image 9.png" alt="Flax product description image 9">
+            </div>
+        </section>
+    </main>
+    <div id="imageModal" class="image-modal" onclick="closeImageModal(event)">
+        <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+        <img id="modalImage" class="image-modal-content" src="" alt="Expanded product image">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 THE CLEEDS. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function changeImage(thumbnail) {
+            document.querySelectorAll('.thumbnail-img').forEach(img => img.classList.remove('active'));
+            thumbnail.classList.add('active');
+            document.getElementById('mainImage').src = thumbnail.src;
+        }
+
+        function openImageModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+
+        function selectSize(btn, size, price, original, perUnit) {
+            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('displayPrice').textContent = price;
+            document.querySelector('.original-price').textContent = original;
+            document.getElementById('pricePerUnit').textContent = perUnit;
+        }
+
+        function addToCart() {
+            const selectedBtn = document.querySelector('.size-btn.active');
+            const price = selectedBtn ? selectedBtn.querySelector('.size-btn-price').textContent : '₹320.00';
+            const imageEl = document.getElementById('mainImage');
+            const imageSrc = imageEl ? imageEl.src : '';
+            addDetailProductToCart(price, imageSrc);
+        }
+    </script>
+</body>
+</html>

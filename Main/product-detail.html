@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cleeds Premium Chia Seeds | Rich in Omega-3, Calcium & Protein | High Fibre Superfood | 100% Natural & Clean Seeds</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-page-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .main-product-image {
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .main-product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .thumbnail-gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .thumbnail-gallery img {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+        .thumbnail-gallery img:hover,
+        .thumbnail-gallery img.active {
+            border-color: #007bff;
+        }
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1.3;
+            color: #333;
+        }
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        .rating-stars {
+            color: #ff9900;
+            font-size: 16px;
+        }
+        .price-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .current-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #b12704;
+            position: relative;
+        }
+        .discount-badge {
+            background-color: #fcd34d;
+            color: #7c2d12;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .original-price {
+            font-size: 18px;
+            color: #666;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+        .price-per-unit {
+            font-size: 14px;
+            color: #666;
+        }
+        .tax-info {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+        }
+        .offers-section {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .offers-section h4 {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .offers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .offer-box {
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 4px;
+            background-color: white;
+        }
+        .offer-box h5 {
+            margin: 0 0 5px 0;
+            font-size: 13px;
+            color: #333;
+        }
+        .offer-box p {
+            margin: 0 0 8px 0;
+            font-size: 12px;
+            color: #666;
+        }
+        .offer-box a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .delivery-benefits {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .benefit-item {
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .benefit-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .benefit-text {
+            font-size: 12px;
+            color: #333;
+            font-weight: 500;
+        }
+        .product-info-compact {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+        .info-row {
+            display: flex;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #333;
+            min-width: 120px;
+        }
+        .info-value {
+            color: #666;
+        }
+        .size-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .size-grid-btn {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        .size-grid-btn:hover {
+            border-color: #007bff;
+            background-color: #f0f7ff;
+        }
+        .size-grid-btn.active {
+            border-color: #007bff;
+            background-color: #e7f3ff;
+        }
+        .size-grid-size {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .size-grid-price {
+            color: #b12704;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .size-grid-unit {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .size-grid-local {
+            font-size: 11px;
+            color: #999;
+        }
+        .about-this-item {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .about-this-item h3 {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .about-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        .about-list li:last-child {
+            border-bottom: none;
+        }
+        .about-list strong {
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .see-all-specs-btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            border: 2px solid #333;
+            background-color: white;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .see-all-specs-btn:hover {
+            background-color: #f0f0f0;
+        }
+        @media (max-width: 768px) {
+            .delivery-benefits {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .size-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .size-options {
+            margin-top: 20px;
+        }
+        .size-options h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .size-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .size-btn {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        .size-btn:hover {
+            border-color: #007bff;
+        }
+        .size-btn.active {
+            border-color: #007bff;
+            background-color: #e7f3ff;
+        }
+        .size-btn-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .size-btn-price {
+            display: block;
+            font-size: 14px;
+            color: #b12704;
+        }
+        .add-to-cart-btn {
+            background-color: #ff9900;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #f59e0b;
+        }
+        .product-description {
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        .product-description h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .product-description p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        .benefits-list li {
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+        .benefits-list li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        @media (max-width: 768px) {
+            .product-page-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .size-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar Placeholder -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <a href="products.html" class="back-link">← Back to Products</a>
+
+        <div class="product-page-layout">
+            <!-- Left: Product Gallery -->
+            <div class="product-gallery">
+                <div class="main-product-image">
+                    <img id="mainImage" src="../images/Chia/front.png" alt="The Cleeds Premium Chia Seeds">
+                </div>
+                <div class="thumbnail-gallery">
+                    <img class="thumbnail-img active" src="../images/Chia/front.png" alt="Image 1" onclick="changeImage(this)">
+                    <img class="thumbnail-img" src="../images/Chia/image 1.jpg" alt="Image 2" onclick="changeImage(this)">
+                    <img class="thumbnail-img" src="../images/Chia/image 2.jpg" alt="Image 3" onclick="changeImage(this)">
+                    <img class="thumbnail-img" src="../images/Chia/image 3.png" alt="Image 4" onclick="changeImage(this)">
+                    <img class="thumbnail-img" src="../images/Chia/image 4.png" alt="Image 5" onclick="changeImage(this)">
+                </div>
+
+                <!-- Important Information Section -->
+                <div class="important-information">
+                    <h3>Important Information</h3>
+                    
+                    <div class="info-section">
+                        <h4>Ingredients:</h4>
+                        <p>Chia Seeds</p>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>Legal Disclaimer:</h4>
+                        <p>Actual product packaging and materials may contain more and different information than what is shown on our app or website. We recommend that you do not rely solely on the information presented here and that you always read labels, warnings, and directions before using or consuming a product.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div class="product-info">
+                <h1 class="product-title">The Cleeds Premium Chia Seeds | Rich in Omega-3, Calcium & Protein | High Fibre Superfood | 100% Natural & Clean Seeds</h1>
+                
+                <div class="product-rating">
+                    <span class="rating-stars">★★★★★</span>
+                    <span>(128 customer reviews)</span>
+                </div>
+
+                <div class="price-section">
+                    <div class="price-container">
+                        <span class="current-price" id="displayPrice">₹130.00</span>
+                        <span class="original-price">₹199.00</span>
+                        <span class="discount-badge">-45%</span>
+                    </div>
+                    <div class="price-per-unit" id="pricePerUnit">₹65.00 /100 g</div>
+                    <div class="tax-info">Inclusive of all taxes</div>
+                </div>
+
+                <!-- Offers Section -->
+                <div class="offers-section">
+                    <h4>Offers</h4>
+                    <div class="offers-grid">
+                        <div class="offer-box">
+                            <h5>💳 Cashback</h5>
+                            <p>Upto ₹8.00 cashback as Amazon Pay Bal...</p>
+                            <a href="#">1 offer ></a>
+                        </div>
+                        <div class="offer-box">
+                            <h5>🤝 Partner Offers</h5>
+                            <p>Get GST invoice and save up to 18% on...</p>
+                            <a href="#">1 offer ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Benefits -->
+                <div class="delivery-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚚</div>
+                        <div class="benefit-text">Free Delivery</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📦</div>
+                        <div class="benefit-text">Non-Returnable</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚛</div>
+                        <div class="benefit-text">Amazon Delivered</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⭐</div>
+                        <div class="benefit-text">Top Brand</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔒</div>
+                        <div class="benefit-text">Secure transaction</div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info-compact">
+                    <div class="info-row">
+                        <span class="info-label">Use by:</span>
+                        <span class="info-value">31 OCT 2026</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Size:</span>
+                        <span class="info-value" id="selectedSize">200g</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Style Name:</span>
+                        <span class="info-value">Chia Seeds</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Flavour Name:</span>
+                        <span class="info-value">Chia Seeds</span>
+                    </div>
+                </div>
+
+                <!-- Size Selection Grid -->
+                <div class="size-options">
+                    <h3>Select Pack:</h3>
+                    <div class="size-grid">
+                        <button class="size-grid-btn active" onclick="selectSizeGrid(this, '200g', '₹130.00', '₹199.00', '₹65.00 /100 g')">
+                            <div class="size-grid-size">200g</div>
+                            <div class="size-grid-price">₹130.00</div>
+                            <div class="size-grid-unit">₹65.00 /100 g</div>
+                            <div class="size-grid-local">Local Stores</div>
+                        </button>
+                        <button class="size-grid-btn" onclick="selectSizeGrid(this, '400g', '₹260.00', '₹500.00', '₹65.00 /100 g')">
+                            <div class="size-grid-size">400g</div>
+                            <div class="size-grid-price">₹260.00</div>
+                            <div class="size-grid-unit">₹65.00 /100 g</div>
+                            <div class="size-grid-local">—</div>
+                        </button>
+                        <button class="size-grid-btn" onclick="selectSizeGrid(this, '500g', '₹320.00', '₹599.00', '₹64.00 /100 g')">
+                            <div class="size-grid-size">500g</div>
+                            <div class="size-grid-price">₹320.00</div>
+                            <div class="size-grid-unit">₹64.00 /100 g</div>
+                            <div class="size-grid-local">Local Stores</div>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="add-to-cart-btn" onclick="addToCart()">🛒 Add to Cart</button>
+                <button class="buy-now-btn" onclick="handleBuyNow()">Buy Now</button>
+
+                <!-- Collapsible Sections -->
+                <div class="collapsible-sections">
+                    <!-- Top Highlights Section -->
+                    <div class="collapsible-item">
+                        <div class="collapsible-header" onclick="toggleSection(this)">
+                            <h3>Top Highlights</h3>
+                            <span class="collapse-icon">▼</span>
+                        </div>
+                        <div class="collapsible-content" style="display: none;">
+                            <div class="highlights-table">
+                                <div class="table-row">
+                                    <div class="table-label">Flavour</div>
+                                    <div class="table-value">Chia Seeds</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-label">Brand</div>
+                                    <div class="table-value">The Cleeds</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-label">Item Weight</div>
+                                    <div class="table-value">200 Grams</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-label">Item Form</div>
+                                    <div class="table-value">Chia Seeds</div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-label">Diet Type</div>
+                                    <div class="table-value"><span class="vegetarian-badge">✓ Vegetarian Product</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item Details Section -->
+                    <div class="collapsible-item">
+                        <div class="collapsible-header" onclick="toggleSection(this)">
+                            <h3>Item Details</h3>
+                            <span class="collapse-icon">▼</span>
+                        </div>
+                        <div class="collapsible-content" style="display: none;">
+                            <div class="details-content">
+                                <div class="detail-group">
+                                    <h4>Product Information</h4>
+                                    <ul class="detail-list">
+                                        <li><strong>Brand Name:</strong> The Cleeds</li>
+                                        <li><strong>Product Name:</strong> Premium Chia Seeds</li>
+                                        <li><strong>Flavor:</strong> Plain / Natural</li>
+                                        <li><strong>Item Form:</strong> Raw Seeds</li>
+                                        <li><strong>Diet Type:</strong> Vegetarian</li>
+                                        <li><strong>Net Quantity:</strong> 200g</li>
+                                        <li><strong>Country of Origin:</strong> India</li>
+                                        <li><strong>Packaging Type:</strong> Resealable Pouch</li>
+                                        <li><strong>Allergen Information:</strong> Packed in a facility that may handle nuts</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-group">
+                                    <h4>Usage Suggestions</h4>
+                                    <p>Can be added to water, smoothies, oats, yogurt, salads, or baked foods</p>
+                                </div>
+                                <div class="detail-group">
+                                    <h4>Storage Instructions</h4>
+                                    <p>Store in a cool, dry place. Keep the pack tightly sealed after use to maintain freshness</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features & Specs Section -->
+                    <div class="collapsible-item">
+                        <div class="collapsible-header" onclick="toggleSection(this)">
+                            <h3>Features & Specs</h3>
+                            <span class="collapse-icon">▼</span>
+                        </div>
+                        <div class="collapsible-content" style="display: none;">
+                            <div class="specs-table">
+                                <div class="spec-row">
+                                    <div class="spec-label">Flavor</div>
+                                    <div class="spec-value">Plain</div>
+                                </div>
+                                <div class="spec-row">
+                                    <div class="spec-label">Item Form</div>
+                                    <div class="spec-value">Seeds</div>
+                                </div>
+                                <div class="spec-row">
+                                    <div class="spec-label">Diet Type</div>
+                                    <div class="spec-value">Vegetarian</div>
+                                </div>
+                                <div class="spec-row">
+                                    <div class="spec-label">Seed Type</div>
+                                    <div class="spec-value">Chia Seeds</div>
+                                </div>
+                                <div class="spec-row">
+                                    <div class="spec-label">Processing Method</div>
+                                    <div class="spec-value">Dried</div>
+                                </div>
+                                <div class="spec-row">
+                                    <div class="spec-label">Specialty</div>
+                                    <div class="spec-value">High Fibre, Rich in Omega-3, High Protein, 100% Natural</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .collapsible-sections {
+                        margin-top: 30px;
+                        border-top: 1px solid #ddd;
+                        padding-top: 20px;
+                    }
+                    .collapsible-item {
+                        border-bottom: 1px solid #ddd;
+                        margin-bottom: 0;
+                    }
+                    .collapsible-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 15px 0;
+                        cursor: pointer;
+                        user-select: none;
+                    }
+                    .collapsible-header h3 {
+                        margin: 0;
+                        font-size: 16px;
+                        color: #333;
+                    }
+                    .collapse-icon {
+                        font-size: 14px;
+                        color: #666;
+                        transition: transform 0.3s ease;
+                    }
+                    .collapsible-header.active .collapse-icon {
+                        transform: rotate(180deg);
+                    }
+                    .collapsible-content {
+                        padding: 15px 0 20px 0;
+                        color: #666;
+                    }
+                    .highlights-table,
+                    .specs-table {
+                        width: 100%;
+                    }
+                    .table-row,
+                    .spec-row {
+                        display: grid;
+                        grid-template-columns: 200px 1fr;
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f0f0f0;
+                        gap: 20px;
+                    }
+                    .table-row:last-child,
+                    .spec-row:last-child {
+                        border-bottom: none;
+                    }
+                    .table-label,
+                    .spec-label {
+                        font-weight: 600;
+                        color: #333;
+                    }
+                    .table-value,
+                    .spec-value {
+                        color: #666;
+                    }
+                    .vegetarian-badge {
+                        background-color: #e8f5e9;
+                        color: #2e7d32;
+                        padding: 5px 10px;
+                        border-radius: 4px;
+                        font-weight: 500;
+                        display: inline-block;
+                    }
+                    .details-content {
+                        padding: 10px 0;
+                    }
+                    .detail-group {
+                        margin-bottom: 20px;
+                    }
+                    .detail-group h4 {
+                        font-size: 14px;
+                        margin: 15px 0 10px 0;
+                        color: #333;
+                    }
+                    .detail-list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    .detail-list li {
+                        padding: 8px 0;
+                        color: #666;
+                        border-bottom: 1px solid #f0f0f0;
+                    }
+                    .detail-list li:last-child {
+                        border-bottom: none;
+                    }
+                    .detail-group p {
+                        color: #666;
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+                    .important-information {
+                        margin-top: 30px;
+                        padding: 20px;
+                        border-top: 2px solid #2c3e50;
+                        background-color: #f8f9fa;
+                        border-radius: 6px;
+                    }
+                    .important-information h3 {
+                        font-size: 18px;
+                        font-weight: 700;
+                        color: #1a1a1a;
+                        margin-bottom: 20px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        letter-spacing: 0.3px;
+                    }
+                    .info-section {
+                        margin-bottom: 18px;
+                    }
+                    .info-section h4 {
+                        font-size: 15px;
+                        font-weight: 700;
+                        color: #1a1a1a;
+                        margin-bottom: 10px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        letter-spacing: 0.2px;
+                    }
+                    .info-section p {
+                        font-size: 14px;
+                        color: #2c3e50;
+                        line-height: 1.7;
+                        margin: 0;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-weight: 500;
+                    }
+                </style>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 THE CLEEDS. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function changeImage(thumbnail) {
+            document.querySelectorAll('.thumbnail-img').forEach(img => img.classList.remove('active'));
+            thumbnail.classList.add('active');
+            document.getElementById('mainImage').src = thumbnail.src;
+        }
+
+        function selectSize(btn, size, price, original, perUnit) {
+            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('displayPrice').textContent = price;
+            document.getElementById('pricePerUnit').textContent = perUnit;
+        }
+
+        function selectSizeGrid(btn, size, price, original, perUnit) {
+            document.querySelectorAll('.size-grid-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('displayPrice').textContent = price;
+            document.querySelector('.original-price').textContent = original;
+            document.getElementById('pricePerUnit').textContent = perUnit;
+            document.getElementById('selectedSize').textContent = size;
+        }
+
+        function addToCart() {
+            const selectedBtn = document.querySelector('.size-btn.active') || document.querySelector('.size-grid-btn.active');
+            const price = selectedBtn ? (selectedBtn.querySelector('.size-btn-price')?.textContent || selectedBtn.querySelector('.size-grid-price')?.textContent || '₹320.00') : '₹320.00';
+            const imageEl = document.getElementById('mainImage');
+            const imageSrc = imageEl ? imageEl.src : '';
+            addDetailProductToCart(price, imageSrc);
+        }
+
+        function toggleSection(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

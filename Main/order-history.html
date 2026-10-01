@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | THE CLEEDS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="order-history-page">
+    <!-- Navigation Bar Placeholder -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="container" data-order-history>
+        <section class="order-history-section" aria-labelledby="order-history-title">
+            <h1 id="order-history-title" class="track-order-title">My Orders</h1>
+            
+            <div id="order-history-list" class="order-history-list">
+                <!-- Order cards will be populated here by JavaScript -->
+            </div>
+
+            <div id="order-history-empty" class="empty-state-card" style="display: none;">
+                <div class="empty-state-icon">📦</div>
+                <h3>No Orders Yet</h3>
+                <p>You have not placed any orders yet.</p>
+                <a href="products.html" class="btn empty-state-btn">Start Shopping</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 THE CLEEDS. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

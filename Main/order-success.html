@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Placed Successfully | THE CLEEDS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <main class="container">
+        <section class="thank-you-section" aria-labelledby="order-success-title">
+            <div class="thank-you-card">
+                <h1 id="order-success-title">Order Placed Successfully!</h1>
+                <div class="thank-you-message">
+                    <p id="order-success-id" class="order-number"></p>
+                    <p>Please save this Order ID for tracking your order.</p>
+                </div>
+                <div class="action-buttons">
+                    <a href="thankyou.html" class="btn">Track Order</a>
+                    <a href="products.html" class="btn btn-secondary">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var orderId = localStorage.getItem('lastPlacedOrderId');
+            var orderIdNode = document.getElementById('order-success-id');
+
+            if (orderIdNode) {
+                orderIdNode.textContent = orderId ? 'Generated Order ID: ' + orderId : 'Generated Order ID: Not available';
+            }
+
+            if (orderId) {
+                var trackOrderBtn = document.querySelector('.action-buttons a[href="thankyou.html"]');
+                if (trackOrderBtn) {
+                    trackOrderBtn.href = 'thankyou.html?orderId=' + encodeURIComponent(orderId);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
